@@ -20,6 +20,7 @@
     <li><a href="#installation">Installation</a></li>
     <li><a href="#project-status">Project Status</a></li>
     <li><a href="#examples">Examples</a></li>
+    <li><a href="#options">Options</a></li>
   </ul>
   </div>
 </nav>
@@ -27,7 +28,7 @@
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Purpose</h2>
   <p class="lead">
-    <code>ember-sortable-table</code>is an addon component for Ember CLI applications that will give you a simple way to make your tables sortable by clicking on the table's headers. Using <a href="http://tablesorter.com" target="_blank">TableSorter by Christian Bach</a> you simply replace your standard <code>&lt;table&gt;</code> with the <code>\{{ember-sortable-chosen}}</code> helper. 
+    <code>ember-sortable-table</code>is an addon component for Ember CLI applications that will give you a simple way to make your tables sortable by clicking on the table's headers. Using <a href="http://tablesorter.com" target="_blank">TableSorter by Christian Bach</a> you simply replace your standard <code>&lt;table&gt;</code> with the <code>\{{ember-sortable-table}}</code> helper. 
   </p>
 
   <div id="installation" role="marker"></div>
@@ -66,49 +67,170 @@
 
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
   <h2>Examples</h2>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">Simple Table</div>
+    </div>
+  
+    <div class="panel-body">
+      {{#ember-sortable-table class="table table-condensed"}}
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>		
+            <th>Points</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Eve</td>
+            <td>Jackson</td>		
+            <td>94</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>John</td>
+            <td>Doe</td>		
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Adam</td>
+            <td>Johnson</td>		
+            <td>67</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Jill</td>
+            <td>Smith</td>		
+            <td>50</td>
+          </tr>
+        </tbody>
+      {{/ember-sortable-table}}
 
-  <div class="col-md-6 col-sm-12">
-    <h3>Standard Mark-up</h3>
-    
-<pre>&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Team Name&lt;/th&gt;
-      &lt;th&gt;City&lt;/th&gt;
-      &lt;th&gt;Stadium&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Rowdies&lt;/td&gt;
-      &lt;td&gt;Tampa Bay&lt;/td&gt;
-      &lt;td&gt;Al Lang&lt;/td&gt;
-    &lt;/tr&gt;
-    ...
-  &lt;/tbody&gt;
-&lt;/table&gt;</pre>
+      <div class="col-md-6 col-sm-12">
+        <h3>Standard Mark-up</h3>
+        
+    <pre>&lt;table class="table table-condensed"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Number&lt;/th&gt;
+          &lt;th&gt;First Name&lt;/th&gt;
+          &lt;th&gt;Last Name&lt;/th&gt;		
+          &lt;th&gt;Points&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;Eve&lt;/td&gt;
+          &lt;td&gt;Jackson&lt;/td&gt;		
+          &lt;td&gt;94&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;John&lt;/td&gt;
+          &lt;td&gt;Doe&lt;/td&gt;		
+          &lt;td&gt;80&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;Adam&lt;/td&gt;
+          &lt;td&gt;Johnson&lt;/td&gt;		
+          &lt;td&gt;67&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;Jill&lt;/td&gt;
+          &lt;td&gt;Smith&lt;/td&gt;		
+          &lt;td&gt;50&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;</pre>
+      </div>
+      
+      <div class="col-md-6 col-sm-12">
+        <h3>Component Mark-up</h3>
+    <pre>\{{#ember-sortable-table class="table table-condensed"}}
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Number&lt;/th&gt;
+          &lt;th&gt;First Name&lt;/th&gt;
+          &lt;th&gt;Last Name&lt;/th&gt;		
+          &lt;th&gt;Points&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;Eve&lt;/td&gt;
+          &lt;td&gt;Jackson&lt;/td&gt;		
+          &lt;td&gt;94&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;John&lt;/td&gt;
+          &lt;td&gt;Doe&lt;/td&gt;		
+          &lt;td&gt;80&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;Adam&lt;/td&gt;
+          &lt;td&gt;Johnson&lt;/td&gt;		
+          &lt;td&gt;67&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;Jill&lt;/td&gt;
+          &lt;td&gt;Smith&lt;/td&gt;		
+          &lt;td&gt;50&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    \{{/ember-sortable-table}}</pre>
+      </div>
+    </div>
   </div>
   
-  <div class="col-md-6 col-sm-12">
-    <h3>Ember-Sortable-Table Mark-up</h3>
-<pre>\{{#ember-sortable-table}}
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Team Name&lt;/th&gt;
-      &lt;th&gt;City&lt;/th&gt;
-      &lt;th&gt;Stadium&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Rowdies&lt;/td&gt;
-      &lt;td&gt;Tampa Bay&lt;/td&gt;
-      &lt;td&gt;Al Lang&lt;/td&gt;
-    &lt;/tr&gt;
-    ...
-  &lt;/tbody&gt;
-\{{/ember-sortable-table}}</pre>
-  </div>
+  <div id="options" role="marker"></div>
+</div>
+
+<div class="clearfix"></div>
+<hr class="row">
+
+<div class="col-lg-10 col-lg-offset-1 col-md-12">
+  <h2>Options</h2>
+  
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Param</th>
+        <th style="width: 15%;">Default <span class="small text-muted">type</span></th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td colspan="3"><div class="text-center">No options currently available</div></td>
+      </tr>
+      {{!
+      <tr>
+        <th><code>phone</code></th>
+        <td><code>""</code> <span class="small text-muted">int or string</span></td>
+        <td>The phone number to be formatted.</td>
+      </tr>
+      }}
+    </tbody>
+
+    <tfoot><tr><td colspan="3"></td></tr></tfoot>
+  </table>
+
 </div>
 
 <div class="clearfix"></div>

@@ -14,7 +14,7 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' maxcdn.bootstrapcdn.com",
+      'script-src': "'self' 'unsafe-eval' maxcdn.bootstrapcdn.com",
       'font-src': "'self' fonts.gstatic.com maxcdn.bootstrapcdn.com",
       'connect-src': "'self'",
       'img-src': "'self'",

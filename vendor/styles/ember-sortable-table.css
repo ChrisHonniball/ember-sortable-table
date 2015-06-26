@@ -1,0 +1,15 @@
+table.ember-sortable-table thead tr .header {
+	background-image: url(bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.ember-sortable-table thead tr .headerSortUp {
+	background-image: url(asc.gif);
+}
+table.ember-sortable-table thead tr .headerSortDown {
+	background-image: url(desc.gif);
+}
+table.ember-sortable-table thead tr .headerSortDown, table.ember-sortable-table thead tr .headerSortUp {
+  background-color: rgb(238, 238, 238);
+}
