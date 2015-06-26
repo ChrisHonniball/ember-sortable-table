@@ -1,52 +1,75 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-      {{#link-to 'index' class="navbar-brand"}}ember-sortable-table{{/link-to}}
-    </div>
+{{! markers need to be placed in sections above desired navigation section to compensate for the navbar! }}
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/ChrisHonniball/ember-sortable-table">View on <i class="fa fa-github"></i></a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+<div id="purpose" role="marker" style="height: 70px;"></div>
+
+<nav id="nav" class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://github.com/ChrisHonniball/ember-sortable-table">ember-sortable-table</a>
+  </div>
+
+  <ul class="nav navbar-nav">
+    <li><a href="#purpose">Purpose</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#project-status">Project Status</a></li>
+    <li><a href="#examples">Examples</a></li>
+  </ul>
+  </div>
 </nav>
 
-<div class="clearfix" style="height: 70px;"></div>
+<div class="col-lg-10 col-lg-offset-1 col-md-12">
+  <h2>Purpose</h2>
+  <p class="lead">
+    <code>ember-sortable-table</code>is an addon component for Ember CLI applications that will give you a simple way to make your tables sortable by clicking on the table's headers. Using <a href="http://tablesorter.com" target="_blank">TableSorter by Christian Bach</a> you simply replace your standard <code>&lt;table&gt;</code> with the <code>\{{ember-sortable-chosen}}</code> helper. 
+  </p>
+
+  <div id="installation" role="marker"></div>
+</div>
+
+<div class="clearfix"></div>
+<hr class="row">
 
 <div class="col-lg-10 col-lg-offset-1 col-md-12">
-  <p class="lead">Ember CLI addon component to add a sortable table to your templates.</p>
-  
-  {{!
-  <hr class="row">
-  
   <h2>Installation</h2>
   <pre>ember install ember-sortable-table</pre>
-  }}
-  
-  <hr class="row">
-  
-  <div class="text-center">
-    <h2>Project Status</h2>
-    <h1><span class="label label-warning">Active Development</span></h1>
-  </div>
-  
-  <div class="clearfix"></div>
-  <hr class="row">
-  
-  <h2>Concept</h2>
-  <p><code>ember-sortable-table</code> is an addon component for Ember CLI applications that will give you a simple way to make your tables sortable by clicking on the table's headers. Using <a href="http://tablesorter.com" target="_blank">TableSorter by Christian Bach</a> you simply replace your standard <code>&lt;table&gt;</code> with the <code>\{{ember-sortable-chosen}}</code> helper.</p>
-  
+
+  <div id="project-status" role="marker"></div>
+</div>
+
+<div class="clearfix"></div>
+<hr class="row">
+
+<div class="col-lg-10 col-lg-offset-1 col-md-12">
+  <h2>Project Status</h2>
+    <p class="lead">
+    <span class="label label-danger">Rapid Development</span>&nbsp;
+    This addon <em>will</em> change rapidly at this stage and <em>may</em> not be fully functional.
+
+    {{!
+    <span class="label label-success">Stable</span>&nbsp;
+    <a href="https://github.com/ChrisHonniball/ember-sortable-table/releases/latest">Stable version released</a>. All additional development will be tagged as a new release.
+    }}
+  </p>
+
+  <div id="examples" role="marker"></div>
+</div>
+
+<div class="clearfix"></div>
+<hr class="row">
+
+<div class="col-lg-10 col-lg-offset-1 col-md-12">
+  <h2>Examples</h2>
+
   <div class="col-md-6 col-sm-12">
-  <h3>Standard Mark-up</h3>
-  
+    <h3>Standard Mark-up</h3>
+    
 <pre>&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
@@ -67,7 +90,7 @@
   </div>
   
   <div class="col-md-6 col-sm-12">
-  <h3>Ember-Sortable-Table Mark-up</h3>
+    <h3>Ember-Sortable-Table Mark-up</h3>
 <pre>\{{#ember-sortable-table}}
   &lt;thead&gt;
     &lt;tr&gt;
@@ -92,5 +115,5 @@
 <hr class="row">
 
 <div class="col-xs-12 text-center lead">
-  Proudly created by <a href="https://chrishonniball.github.io">@ChrisHonniball</a>
+  Created by <a href="https://github.com/ChrisHonniball">@ChrisHonniball</a>
 </div>

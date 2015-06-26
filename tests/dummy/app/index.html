@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ember CLI Addon - ember-sortable-table</title>
-    <meta name="description" content="Ember CLI addon component to add a sortable table to your templates.">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{content-for 'head'}}
@@ -16,14 +16,13 @@
 
     {{content-for 'head-footer'}}
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#nav" data-offset="0">
     {{content-for 'body'}}
 
     <script src="assets/vendor.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="assets/dummy.js"></script>
 
     {{content-for 'body-footer'}}
   </body>
 </html>
-
