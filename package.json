@@ -50,6 +50,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoUrl": "https://chrishonniball.github.io/ember-sortable-table"
+    "demoURL": "https://chrishonniball.github.io/ember-sortable-table"
   }
 }
