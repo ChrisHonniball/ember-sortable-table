@@ -1,6 +1,6 @@
 {
   "name": "ember-sortable-table",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Ember CLI addon component to add a sortable table to your templates.",
   "directories": {
     "doc": "doc",

@@ -77,7 +77,7 @@ export default Ember.Component.extend({
     ]);
     
     if(this.attrs.textExtraction) {
-      this.settings.textExtraction = (node) => {
+      settings.textExtraction = (node) => {
         this.attrs.textExtraction(node);
       };
     }
