@@ -68,9 +68,6 @@ export default Ember.Component.extend({
       "cssDesc",
       "cssHeader",
       "debug",
-      "headers",
-      "sortForce",
-      "sortList",
       "sortMultiSortKey",
       "textExtraction",
       "widthFixed",
@@ -78,8 +75,24 @@ export default Ember.Component.extend({
     
     if(this.attrs.textExtraction) {
       settings.textExtraction = (node) => {
-        this.attrs.textExtraction(node);
+        return this.attrs.textExtraction(node);
       };
+    }
+    
+    const notNullSettings = ["headers", "sortForce", "sortList"];
+    notNullSettings.forEach((key) => {
+      if(this.get(key)) {
+        settings[key] = this.get(key);
+      }
+    });
+    
+    if(this.get('debug')) {
+      Ember.Logger.log(
+        "%c%s#didInsertElement()\n\t settings: %O",
+        "color: purple", // http://www.w3schools.com/html/html_colornames.asp
+        this.toString(),
+        settings
+      );
     }
     
     this.$().tablesorter(settings);
@@ -88,5 +101,4 @@ export default Ember.Component.extend({
   willDestroyElement: function(){
     this.$().tablesorter('destroy');
   }
-
 });
