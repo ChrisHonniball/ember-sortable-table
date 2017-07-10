@@ -12,6 +12,25 @@ export default Ember.Component.extend({
   
   classNames: ["ember-sortable-table"],
   
+  rowTracker: Ember.computed({
+    get(key) {
+      return this.get(key);
+    },
+    set(key, val) {
+      if(this.get('debug')) {
+        Ember.Logger.log(
+          "%c%s#rowTracker.set() triggering table update.",
+          "color: purple", // http://www.w3schools.com/html/html_colornames.asp
+          this.toString()
+        );
+      }
+      
+      this.send('updateTable');
+      
+      return val;
+    }
+  }),
+  
   //////////////////////////////////
   //!          Settings           //
   //////////////////////////////////
@@ -73,6 +92,7 @@ export default Ember.Component.extend({
       "widthFixed",
     ]);
     
+    // Special handling for the `textExtraction` callback.
     if(this.attrs.textExtraction) {
       settings.textExtraction = (node) => {
         return this.attrs.textExtraction(node);
@@ -100,5 +120,12 @@ export default Ember.Component.extend({
   
   willDestroyElement: function(){
     this.$().tablesorter('destroy');
+  },
+  
+  actions: {
+    updateTable() {
+      // let the plugin know that we made an update 
+      this.$().trigger("update");
+    }
   }
 });
